@@ -82,3 +82,37 @@
    If you were successful so far this is what you're seeing on terminal.
         
    ![success.png](images/success.png)
+   
+   ### Further advanced steps
+   
+   Ok , now we got a Docker running on AWS EC2. It's nice but nothing useful so far.
+   Let's try go beyond hello world.
+   
+   1. Run a Tomcat instance from Docker hub just doing:
+        `sudo docker run -it --rm -p 8888:8080 tomcat:8.0`
+      You'll see the tomcat log on the console. Leave it running for a while.
+        
+   2. Try to access using a browser http://your-ec2-ip.your-zone.amazonaws.com:8888.
+      You probably had a problem doing this. It's because the port 8888 is not open
+      to inbound connection. Let's look back to item 2 of EC2 creation when we just
+      left it as default.
+      
+   3. Go to the security group related with your running instance.
+      ![inbound.png](images/inbound.png)
+      
+   4. After add the port rule for the running Tomcat try again: http://your-ec2-ip.your-zone.amazonaws.com:8888
+      ![tomcat.png](images/tomcat.png)
+      
+   ### Hints
+   
+   * If you are not familiar with EC2 console and instances, skip the Ubuntu instance creation and install Docker
+     on a local machine. The steps are the same. (Almost if you consider the security group ports configuration).
+     
+   * You can do the opposite as well. Just forget Docker and try to create a EC2 instance and play with it.
+   
+   * Don't waste time trying to execute a command which is not working. Try different alternatives or even start
+     from scratch.
+     
+   * Every time you build a Docker image or download from Docker hub that uses space on your disk. You can check
+     this running 
+     `$ sudo docker images`
