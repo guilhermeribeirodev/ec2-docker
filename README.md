@@ -4,7 +4,8 @@
  
    1. [Running an ubuntu instance on AWS EC2](ec2-instance.md)
    2. [Installing Docker on the created Ubuntu instance](docker-install.md)
-   3. [Hints](hints.md) 
+   3. [Running Wildfly from Docker](running-wildfly.md) 
+   4. [Hints](hints.md) 
     
  
       
