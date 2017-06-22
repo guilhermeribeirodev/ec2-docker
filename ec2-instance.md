@@ -22,7 +22,7 @@
     
  6. You can now access the instance via SSH using the your generated public key (the-name-you-gave.pem).
  
-    `user@local$ ssh -i path-to-my/the-name-you-gave.pem ubuntu@your-ec2-ip.your-zone.amazonaws.com`
+    $`ssh -i path-to-my/the-name-you-gave.pem ubuntu@your-ec2-ip.your-zone.amazonaws.com`
     
     ps: here you can face problems if your public key has too wide permissions (chmod 600 on it to solve) 
     

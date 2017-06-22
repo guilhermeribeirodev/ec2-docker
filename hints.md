@@ -19,7 +19,7 @@
 * Every time you build a Docker image or download from Docker hub that uses space on your disk. You can check
  this running 
  
- `$ sudo docker images`
+ $`sudo docker images`
  
  
  [<- Back](README.md)
