@@ -13,18 +13,18 @@
     a warning about the ssh port open to world (0.0.0.0/0). Don't worry about this now as
     you can come back later to arrange it.
     
- 4. Create or choose a key pair in order to access the instance with SSH public key.
-    Keep your key in a reasonable place as ~/.ssh/  for example
+ 4. Create or choose a key pair in order to access the instance with SSH private key.
+    Keep your key (.pem file) in a reasonable place as ~/.ssh/  for example
     
  5. Go to your EC2 console to check if the instance is already running.
  
     ![instance-running.png](images/instance-running.png)
     
- 6. You can now access the instance via SSH using the your generated public key (the-name-you-gave.pem).
+ 6. You can now access the instance via SSH using the previously generated public key (the-name-you-gave.pem).
  
     $`ssh -i path-to-my/the-name-you-gave.pem ubuntu@your-ec2-ip.your-zone.amazonaws.com`
     
-    ps: here you can face problems if your public key has too wide permissions (chmod 600 on it to solve) 
+    ps: here you can face problems if your private key has too wide permissions (chmod 600 on it to solve) 
     
     
   [<- Back](README.md)
