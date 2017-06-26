@@ -19,7 +19,7 @@ It shows the most recently created images. If you want to see ALL of them, the p
 
    $`sudo docker images -a`
 
-This will print out some images tagged as <none> from repository <none>. They were created as a children dependency from another
+This will print out some images tagged as "none" from repository "none". They were created as a children dependency from another
 image that was either built or pulled. Some of them are being used by other images. The ones not being currently used are bad.
 Those are called [**dangling**](http://www.projectatomic.io/blog/2015/07/what-are-docker-none-none-images/) images. 
 You can check for dangling images by using:
