@@ -16,11 +16,11 @@
  
    2. Get the GPG Key. It should print an OK if it's successful. 
      
-        $`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+      $`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
     
    3. Verify the fingerprint.
    
-        $`sudo apt-key fingerprint 0EBFCD88`
+      $`sudo apt-key fingerprint 0EBFCD88`
      
    4. Setup the stable repository. Notice that you are specifying Ubuntu distro, architecture and version.
       It's been used stable but you could use either release or test. If it's successful nothing will be shown.
@@ -28,10 +28,10 @@
       ps: lsb_release -cs is used to provide the distro name.
    
       ```
-      $ sudo add-apt-repository \
-       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-       $(lsb_release -cs) \
-       stable"
+         $ sudo add-apt-repository \
+               "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+               $(lsb_release -cs) \
+               stable"
 
       ```
       
@@ -45,7 +45,7 @@
       
    7. Verify that Docker has been correctly installed.
    
-       $`sudo docker run hello-world`
+      $`sudo docker run hello-world`
        
    If you were successful so far this is what you're seeing on terminal.
         
@@ -57,7 +57,7 @@
    Let's try go beyond hello world.
    
    1. Run a Tomcat instance from Docker hub just doing:
-        $`sudo docker run -it --rm -p 8888:8080 tomcat:8.0`
+      $`sudo docker run -it --rm -p 8888:8080 tomcat:8.0`
       You'll see the tomcat log on the console. Leave it running for a while.
         
    2. Try to access it using a browser http://your-ec2-ip.your-zone.amazonaws.com:8888.

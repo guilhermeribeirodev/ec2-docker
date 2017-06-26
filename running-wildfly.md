@@ -16,27 +16,27 @@ So let's start to setup our deployment of a sample car-service web app.
 
 1. Create a directory for this project and add the Dockerfile describing Wildfly Docker hub image use.
    
-  $`mkdir car-service`
+   $`mkdir car-service`
   
-  $`echo FROM jboss/wildfly >> Dockerfile`
+   $`echo FROM jboss/wildfly >> Dockerfile`
   
 2. Copy the sample [car-service.war](sample/car-service.war) **from your local machine** to EC2 Ubuntu instance via ssh (replace the dummy names).
 
-  $`scp -i ~/path-to/the-name-you-gave.pem car-service.war ubuntu@your-ec2-ip.your-zone.amazonaws.com:/home/ubuntu/car-service/`
+   $`scp -i ~/path-to/the-name-you-gave.pem car-service.war ubuntu@your-ec2-ip.your-zone.amazonaws.com:/home/ubuntu/car-service/`
   
 3. Add the Docker ADD command in order to copy it to Wildfly's deployment folder. You can do this using your preferred editor 
    nano, vi, vim, emacs if you want.
 
-  $`echo ADD car-service.war /opt/jboss/wildfly/standalone/deployments/ >> Dockerfile`
+   $`echo ADD car-service.war /opt/jboss/wildfly/standalone/deployments/ >> Dockerfile`
   
 4. Now you may be able to build the Docker image locally as you have all the needed files. Running the following you are asking to
    build an image tagging it as wildfly-app (could be any name) using the Dockerfile present in the specified path which is "."(dot).
 
-  $`sudo docker build --tag=wildfly-app .`
+   $`sudo docker build --tag=wildfly-app .`
   
 5. Run the container specified by the tag property. The parameter -p is needed to redirect the container port to a external interface.  
 
-  $`sudo docker run -it -p 8080:8080  wildfly-app`
+   $`sudo docker run -it -p 8080:8080  wildfly-app`
   
 6. Now go to the browser and you'll see the car-service running http://your-ec2-ip.your-zone.amazonaws.com:8080/car-service/
 
