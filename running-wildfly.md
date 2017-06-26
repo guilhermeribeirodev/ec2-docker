@@ -39,3 +39,5 @@ So let's start to setup our deployment of a sample car-service web app.
   $`sudo docker run -it -p 8080:8080  wildfly-app`
   
 6. Now go to the browser and you'll see the car-service running http://your-ec2-ip.your-zone.amazonaws.com:8080/car-service/
+
+[<- Back](README.md)
