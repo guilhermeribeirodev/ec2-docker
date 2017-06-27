@@ -1,4 +1,5 @@
 node {
+    aws
     stage("Build"){
        echo 'Building ...'
    }
