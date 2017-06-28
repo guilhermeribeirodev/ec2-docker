@@ -8,6 +8,7 @@ node {
         java.inside{
             sh 'java -version'
             echo 'listing files inside docker'
+            dir 'sample'
             sh 'ls'
         }
     }
