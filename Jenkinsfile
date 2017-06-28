@@ -1,10 +1,11 @@
 node {
-    aws
-    stage("Build"){
-       echo 'Building ...'
-   }
-   stage("Deploy"){
-       echo 'Deploy'
-   }
-   echo 'Hello World'
+    echo 'Starting'
+    checkout scm
+    def java = docker.image('java');
+    stage('Build'){
+        
+        java.inside{
+            sh 'java -version'
+        }
+    }
 }

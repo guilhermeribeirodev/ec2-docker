@@ -11,7 +11,8 @@ understanding Docker's concepts and working, rather than going into each Docker 
    4. [Images and containers concepts](images-containers.md)
    5. [Replacing artifact version on the fly](container-change-jar.md) 
    6. [Installing Jenkins on EC2 Instance](install-jenkins.md) 
-   7. [Hints](hints.md) 
+   7. [Running a Java application on Docker from Jenkins pipeline](jenkins-pipeline.md) 
+   8. [Hints](hints.md) 
     
  
       
