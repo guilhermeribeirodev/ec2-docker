@@ -1,6 +1,7 @@
 node {
+    aws
     stage("Build"){
-       echo 'Building'
+       echo 'Building ...'
    }
    stage("Deploy"){
        echo 'Deploy'
