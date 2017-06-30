@@ -5,7 +5,6 @@ node {
     def errorMsg = ''
     checkout scm
     //git url: 'https://github.com/guilhermeribeirodev/ec2-docker'
-
     def java = docker.image('maven');
 
     stage('Build'){
