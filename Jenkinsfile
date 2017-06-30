@@ -11,12 +11,12 @@ node {
     def commit = env.GIT_COMMIT
 
     gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-    slackSend message: 'Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n' + gitCommit , color: '#ffff00'
+    slackSend message: "Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n" + gitCommit , color: '#ffff00'
 
     stage('Build'){
 
         try{
-            slackMessage +=  'Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n' + gitCommit
+            slackMessage +=  "Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n" + gitCommit
             java.inside{
                 sh 'java -version'
                 echo 'listing files inside docker'
