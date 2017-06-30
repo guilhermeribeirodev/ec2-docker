@@ -1,7 +1,7 @@
 node {
     echo 'Starting'
     def slackMessage = '';
-    def color = '#005EFF'
+    def color = '#00EE11'
     def errorMsg = ''
     checkout scm
     //git url: 'https://github.com/guilhermeribeirodev/ec2-docker'
@@ -23,7 +23,7 @@ node {
 
             slackMessage += "Build successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}"    
         } catch(e){
-            errorMsg = e
+            errorMsg = e.getMessage()
         } finally {
             
             slackSend message: "Build not successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}\n"+errorMsg , color: '#FF0000'
