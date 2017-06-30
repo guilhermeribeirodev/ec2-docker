@@ -1,17 +1,20 @@
 node {
     echo 'Starting'
+    def slackMessage = '';
+    poll scm
     checkout scm
-    sh 'ls'
-    def java = docker.image('java');
+    
+    //git url: 'https://github.com/guilhermeribeirodev/ec2-docker'
+    def java = docker.image('maven');
     stage('Build'){
-        
+        slackMessage +=  "Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n"
         java.inside{
             sh 'java -version'
             echo 'listing files inside docker'
-            dir 'sample'
-            sh 'ls'
+            //dir 'sample'
+        slackMessage += "Build successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}"    
+          
         }
     }
+    slackSend message: slackMessage, color: '#005EFF'
 }
-
-git url: 'https://github.com/jfrogdev/project-examples.git'
