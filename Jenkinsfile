@@ -3,7 +3,7 @@ node {
     def slackMessage = '';
     poll scm
     checkout scm
-    
+
     //git url: 'https://github.com/guilhermeribeirodev/ec2-docker'
     def java = docker.image('maven');
     stage('Build'){
@@ -11,7 +11,7 @@ node {
         java.inside{
             sh 'java -version'
             echo 'listing files inside docker'
-            //dir 'sample'
+            
         slackMessage += "Build successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}"    
           
         }
