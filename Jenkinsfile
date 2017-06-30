@@ -22,10 +22,9 @@ node {
                 }
             }
 
-            slackMessage += "Build successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}"    
+            slackMessage += "Build successfully done: commit ${GIT_COMMIT} @ branch:${GIT_BRANCH}"    
         } catch(e){
-            errorMsg = e.getMessage()
-            errorMsg += '\n'
+    
             errorMsg += e.getStackTrace()
         } finally {
             
