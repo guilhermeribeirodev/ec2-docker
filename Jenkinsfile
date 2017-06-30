@@ -21,8 +21,8 @@ node {
                 sh 'java -version'
                 echo 'listing files inside docker'
                 dir('sample'){
-                    //sh 'mvn clean install'
-                    sh 'ls'
+                    sh 'mvn clean install'
+                    //sh 'ls'
                 }
             }
 
@@ -31,11 +31,10 @@ node {
     
             errorMsg += e.getStackTrace()
             color = '#FF0000'
-        } finally {
-            
             slackMessage = "Build not successfully done see more at "+
             "http://ec2-52-26-192-142.us-west-2.compute.amazonaws.com:8007/me/my-views/view/all/job/car-service/${env.BUILD_NUMBER}/console" 
-            
+
+        } finally {
             
             slackSend message: slackMessage , color: color
 
