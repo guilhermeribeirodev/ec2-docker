@@ -10,8 +10,10 @@ node {
         java.inside{
             sh 'java -version'
             echo 'listing files inside docker'
-            sh 'cd sample'
-            sh 'ls'
+            dir('sample'){
+                sh 'ls'
+            }
+            
             
         slackMessage += "Build successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}"    
           
