@@ -24,6 +24,8 @@ node {
             slackMessage += "Build successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}"    
         } catch(e){
             errorMsg = e.getMessage()
+            errorMsg += '\n'
+            errorMsg += e.getStackTrace()
         } finally {
             
             slackSend message: "Build not successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}\n"+errorMsg , color: '#FF0000'
