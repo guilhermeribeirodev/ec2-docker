@@ -6,6 +6,7 @@ node {
     //git url: 'https://github.com/guilhermeribeirodev/ec2-docker'
 
     def java = docker.image('maven');
+
     stage('Build'){
 
         try{
@@ -17,16 +18,17 @@ node {
                     sh 'mvn clean install'
                     //sh 'ls'
                 }
-                
-                
+            }
+
             slackMessage += "Build successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}"    
-              
-            }
-            } finnaly {
-                slackMessage = "Build not successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}" 
-                color = '#FF0000'
-            }
+
+        } finally {
+            
+            slackSend message: "Build not successfully done: commit ${env.GIT_COMMIT} @ branch:${env.GIT_BRANCH}" , color: '#FF0000'
+        }
+
+        slackSend message: message , color: color
         
     }
-    slackSend message: slackMessage, color: color
+    
 }
