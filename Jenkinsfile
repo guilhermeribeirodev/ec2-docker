@@ -7,6 +7,9 @@ node {
     //git url: 'https://github.com/guilhermeribeirodev/ec2-docker'
     def java = docker.image('maven');
 
+    def branch = env.GIT_BRANCH
+    def commit = env.GIT_COMMIT
+
     gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
 
     stage('Build'){
@@ -22,7 +25,7 @@ node {
                 }
             }
 
-            slackMessage += "Build successfully done: commit ${GIT_COMMIT} @ branch:${GIT_BRANCH}"    
+            slackMessage += "Build successfully done: commit ${commit} @ branch:${branch}"    
         } catch(e){
     
             errorMsg += e.getStackTrace()
