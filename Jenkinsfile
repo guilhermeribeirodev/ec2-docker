@@ -11,7 +11,7 @@ node {
     def commit = env.GIT_COMMIT
 
     gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-    slackSend message: "Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n commit" + gitCommit , color: '#ffff00'
+    slackSend message: "Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n commit: " + gitCommit , color: '#ffff00'
 
     stage('Build'){
 
@@ -21,8 +21,8 @@ node {
                 sh 'java -version'
                 echo 'listing files inside docker'
                 dir('sample'){
-                    sh 'mvn clean install'
-                    //sh 'ls'
+                    //sh 'mvn clean install'
+                    sh 'ls'
                 }
             }
 
@@ -32,7 +32,7 @@ node {
             errorMsg += e.getStackTrace()
         } finally {
             
-            slackSend message: "Build not successfully done: commit ${gitCommit} @ branch:${env.GIT_BRANCH}\n see more at "+
+            slackSend message: "Build not successfully done see more at "+
             "http://ec2-52-26-192-142.us-west-2.compute.amazonaws.com:8007/me/my-views/view/all/job/car-service/${env.BUILD_NUMBER}/console" , color: '#FF0000'
         }
 
