@@ -1,7 +1,6 @@
 node {
     echo 'Starting'
     def slackMessage = '';
-    poll scm
     checkout scm
 
     //git url: 'https://github.com/guilhermeribeirodev/ec2-docker'
