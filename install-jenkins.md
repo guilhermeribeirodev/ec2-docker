@@ -1,6 +1,6 @@
 ## Installing Jenkins on a EC2 instance.
 
-###Doing the usual Jenkins installation.
+### Doing the usual Jenkins installation.
 
 This installation will be done as a *linux service way*. There are many different ways to run Jenkins as: using Docker
 , executing a .jar file and others. That means a script will be created under /etc/init.d/ which contains the basic
