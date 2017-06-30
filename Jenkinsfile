@@ -11,7 +11,7 @@ node {
     def commit = env.GIT_COMMIT
 
     gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-    slackSend message: "Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n" + gitCommit , color: '#ffff00'
+    slackSend message: "Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n commit" + gitCommit , color: '#ffff00'
 
     stage('Build'){
 
