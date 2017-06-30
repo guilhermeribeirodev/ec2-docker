@@ -7,10 +7,12 @@ node {
     //git url: 'https://github.com/guilhermeribeirodev/ec2-docker'
     def java = docker.image('maven');
 
+    gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+
     stage('Build'){
 
         try{
-            slackMessage +=  "Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n"
+            slackMessage +=  'Build Started: Job: ${env.JOB_NAME} Build # ${env.BUILD_NUMBER}\n' + gitCommit
             java.inside{
                 sh 'java -version'
                 echo 'listing files inside docker'
