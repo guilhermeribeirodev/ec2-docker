@@ -32,7 +32,8 @@ node {
             errorMsg += e.getStackTrace()
         } finally {
             
-            slackSend message: "Build not successfully done: commit ${gitCommit} @ branch:${env.GIT_BRANCH}\n"+errorMsg , color: '#FF0000'
+            slackSend message: "Build not successfully done: commit ${gitCommit} @ branch:${env.GIT_BRANCH}\n see more at "+
+            "http://ec2-52-26-192-142.us-west-2.compute.amazonaws.com:8007/me/my-views/view/all/job/car-service/${env.BUILD_NUMBER}/console" , color: '#FF0000'
         }
 
         slackSend message: message , color: color
