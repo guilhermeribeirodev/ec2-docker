@@ -21,8 +21,8 @@ node {
                 sh 'java -version'
                 echo 'listing files inside docker'
                 dir('sample'){
-                    sh 'mvn clean install'
-                    //sh 'ls'
+                    //sh 'mvn clean install'
+                    sh 'ls'
                 }
             }
 
