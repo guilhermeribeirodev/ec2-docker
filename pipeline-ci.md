@@ -85,3 +85,5 @@ If there are old files into Jenkins project workspace, you may have to delete th
         echo 'Building code here ...'
     }
 ```
+
+There are many plugins available and many ways to use the Jenkins pipeline. This is the simplest way to test some pipeline tools. Although this way looks enough, it's a good practice to keep the scripts within a Jenkinsfile on the project repository as we will see in the [next example](scm-jenkinsfile.md).
