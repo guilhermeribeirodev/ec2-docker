@@ -1,6 +1,6 @@
-## Running a Java application on Docker from Jenkins pipeline.
+## Running an example of Jenkins pipeline.
 
-This example should be the top achievement so far. It represents the continuous integration high level steps to build, deploy and test
+Jenkins pipeline represents the continuous integration high level steps to build, deploy and test
 an application. Everything done until now was to provide this high level configurations.
 From Jenkins pipeline you can do many things as: Managing EC2 instances via AWS plugin, managing Docker images, checking out source code from SCM (svn, git, etc), managing Maven , Gradle , SBT builds,  run bash , controlling quality control on deliveries and thousands of possibilities.   
 
@@ -44,4 +44,3 @@ node {
 ![stage-view](images/stage-view.png)
 
 
-  sudo gpasswd -a $USER docker
