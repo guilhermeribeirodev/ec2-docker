@@ -5,7 +5,7 @@ on a container.Then we'll change the web application artifact by doing some chan
  
 #### Running the previously created Wildfly's car-service. 
 
-1. If you have not removed the wildfly-app yet, you just need to run it. Let's follow the steps again so we can see how simple is to do that:
+1. If you have not removed the wildfly-app yet, you just need to run it. Let's follow the same steps again so we can see how simple is to do that:
 
     $`mkdir car-service && cd car-service`
 
@@ -15,7 +15,7 @@ on a container.Then we'll change the web application artifact by doing some chan
 
     $`echo ADD car-service.war /opt/jboss/wildfly/standalone/deployments/ >> Dockerfile`
 
-    $`sudo docker build --tag=wildfly-app .`
+    $`docker build --tag=wildfly-app .`
 
     This will show the build being done.
     
@@ -27,17 +27,17 @@ on a container.Then we'll change the web application artifact by doing some chan
 
 2. Ok, now check the created image list:
 
-    $`sudo docker images`
+    $`docker images`
 
 3. Run the image on 8080 port. Let's do it now using -d "detached" to keep using the same bash terminal:
 
-    $`sudo docker run -d -it -p 8080:8080 wildfly-app`
+    $`docker run -d -it -p 8080:8080 wildfly-app`
 
     You'll see the process ID if it worked.
 
 4. Checking the container status:
 
-    $`sudo docker stats`
+    $`docker stats`
 
 #### Changing the war file content.
 
@@ -70,7 +70,7 @@ Let's come back to EC2 instance bash and copy the new war file into the containe
 
 2. Copy the artifact into the container using [previously](images-containers.md) seen tools.
 
-    $`sudo docker cp car-service.war [CONTAINER_ID|CONATINER_NAME]:/opt/jboss/wildfly/standalone/deployments/`
+    $`docker cp car-service.war [CONTAINER_ID|CONATINER_NAME]:/opt/jboss/wildfly/standalone/deployments/`
 
 3. Go to the browser to check your changed file.
 

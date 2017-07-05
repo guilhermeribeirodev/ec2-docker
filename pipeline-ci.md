@@ -25,13 +25,13 @@ a couple of lines on the build pipeline.
 
 1. Create a simple test case. This can be done using a Maven archetype. 
 
-	`mvn archetype:generate`
+	$`mvn archetype:generate`
 
-2. Choose a number of the wide list of projects. I'd suggest the 153 which is a very simple Java 1.8 test case.
+2. Choose a number of the wide list of projects. I'd suggest the #153 which is a very simple Java 1.8 test case.
 
 3. Fill the required information. Navigate into the maven fresh generated folder and run the maven verify.
 
-	`mvn clean verify`
+	$`mvn clean verify`
 
 4. This will run the tests and build a jar file with the dependencies.
 
@@ -39,7 +39,7 @@ a couple of lines on the build pipeline.
 
 6. If you followed the manual creation steps don't forget to ignore the builded files.
 
-	`touch .gitignore && echo target/ > .gitignore`
+	$`touch .gitignore && echo target/ > .gitignore`
 
 
 #### Checking out and building from the pipeline.
