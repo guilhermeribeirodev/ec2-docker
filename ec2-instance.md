@@ -5,7 +5,7 @@
     
  2. There will be some steps when creating it. They won't make difference to this example.
     Be careful with the last step 6 so it's related to security group and public keys.
-    You must have some knowledge about how this works otherwise you'll have access issues.
+    You must have some knowledge about how [this](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) works otherwise you'll have access issues.
     
     ![security-group.png](images/security-group.png)
     
@@ -24,7 +24,8 @@
  
     $`ssh -i path-to-my/the-name-you-gave.pem ubuntu@your-ec2-ip.your-zone.amazonaws.com`
     
-    ps: here you can face problems if your private key has too wide permissions (chmod 600 on it to solve) 
-    
+    Here you should face problems if the private key has too wide permissions. (chmod 600 should solve it) 
+
+    $`chmod 600 path-to-my/the-name-you-gave.pem`
     
   [<- Back](README.md)

@@ -32,11 +32,11 @@ So let's start to setup our deployment of a sample car-service web app.
 4. Now you may be able to build the Docker image locally as you have all the needed files. Running the following you are asking to
    build an image tagging it as wildfly-app (could be any name) using the Dockerfile present in the specified path which is "."(dot).
 
-   $`sudo docker build --tag=wildfly-app .`
+   $`docker build --tag=wildfly-app .`
   
 5. Run the container specified by the tag property. The parameter -p is needed to redirect the container port to a external interface.  
 
-   $`sudo docker run -it -p 8080:8080  wildfly-app`
+   $`docker run -it -p 8080:8080  wildfly-app`
   
 6. Now go to the browser and you'll see the car-service running http://your-ec2-ip.your-zone.amazonaws.com:8080/car-service/
 

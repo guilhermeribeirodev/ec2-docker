@@ -1,6 +1,6 @@
 ### Installing Docker on the previously created Ubuntu instance.
  
- Let's suppose you are now logged in the previously created Ubuntu instance, there are some basic steps
+ Let's suppose you are now logged on the previously created Ubuntu instance, there are some basic steps
  to install Docker CE on it. Be careful with the Ubuntu version numbers and repositories addresses as
  they can change with time. **Be careful copying and pasting multiline comands**.
       
@@ -35,7 +35,7 @@
 
       ```
       
-   5. Apply the changes by updating the repositories. You'll see something related to docker being shown.
+   5. Apply the changes by updating the repositories. You'll see something related to Docker being shown.
        
       $`sudo apt-get update`
       
@@ -50,14 +50,24 @@
    If you were successful so far this is what you're seeing on terminal.
         
    ![success.png](images/success.png)
+
+   Post installation step
+
+   To avoid typing aways type sudo when using Docker we need to add it on the users group.
+
+      $`sudo groupadd docker`
+
+   Then add the current user to docker group.
+
+      $`sudo usermod -aG docker $USER`
    
    ### Further advanced steps
    
    Ok , now we got a Docker running on AWS EC2. It's nice but there is nothing very useful so far.
-   Let's try go beyond hello world.
+   Let's try to go beyond hello world.
    
-   1. Run a Tomcat instance from Docker hub just doing:
-      $`sudo docker run -it --rm -p 8888:8080 tomcat:8.0`
+   1. Run a Tomcat instance from Docker hub just running:
+      $`docker run -it --rm -p 8888:8080 tomcat:8.0`
       You'll see the tomcat log on the console. Leave it running for a while.
         
    2. Try to access it using a browser http://your-ec2-ip.your-zone.amazonaws.com:8888.
