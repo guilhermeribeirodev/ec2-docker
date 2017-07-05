@@ -1,6 +1,6 @@
 ### Jenkinsfile placed on code repository
 
-Having a Jenkinsfile on the project root is better than write scripts direct into Jenkins pipeline.
+Having a Jenkinsfile on the project root is better than write scripts directly into Jenkins pipeline.
 It's more maintanable and easy to change as it's not needed to go to Jenkins dashboard.
 
 Basicly, everything it's needed is to put the same pipeline script into a file called Jenkinsfile which should live on the project root .
