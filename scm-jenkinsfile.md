@@ -32,3 +32,5 @@ We'll make just a few steps to improve our pipeline.
 ```
 
 1. Run the build again. The results must be the same as when it's direct on Jenkins pipeline.
+
+[<- Back](README.md)

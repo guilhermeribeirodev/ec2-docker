@@ -67,7 +67,7 @@ It shows all Jenkis variables as well as what they do.
    $`sudo lsof -i -n -P | more`
 
 
-
+[<- Back](README.md)
 
 
 
