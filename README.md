@@ -1,8 +1,9 @@
 # ec2-docker-jenkins
 ##### Provisioning a Docker example running on an EC2 fresh instance.
 
-This tutorial purpose is to achieve either infrastructure or continuous integration steps, while
-understanding Docker's concepts and working, rather than going into each Docker tool separated. 
+This tutorial purpose is to achieve infrastructure and continuous integration steps, while
+understanding Docker's concepts. It will go through practical simplest way. It supposes users are familiar
+at least with SCM (source code management) as Git, basic Linux Debian and AWS instances.
  
  
    1. [Running an Ubuntu instance on AWS EC2](ec2-instance.md)

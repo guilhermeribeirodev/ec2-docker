@@ -28,7 +28,7 @@ parameters. The Jenkins is going to be managed as:  `sudo service jenkins [stop|
 
 	$`service jenkins status`
 
-PS: If you are running it on a EC2 instance, be aware of security group ports allowance. Go to the security groups inbound tab
+PS: If you are running it on an EC2 instance, be aware of security group ports allowance. Go to the security groups inbound tab
 to check if the running Jenkins port matches EC2 permissions.
  
 ### Jenkins initial setup.

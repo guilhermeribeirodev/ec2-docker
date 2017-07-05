@@ -74,7 +74,7 @@ If you want to see *ALL* containers you'll need the "-a" all (All states) parame
 
    $`docker ps -a`
 
-There are more tools available to operate containers. They can be checked using:
+There are more tools available to operate containers. They can be checked running:
 
    $`docker container -h`
 
@@ -105,6 +105,10 @@ Starting a container:
 Logging into container's bash.
 
    $`docker exec -it [CONTAINER_ID|CONTAINER_TAG] bash`
+
+You might as well run other commands from the host with the "exec" tool.
+
+   $`docker exec -it `
 
 Copying stuff from local into container.
 
