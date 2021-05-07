@@ -53,7 +53,7 @@
 
    Post installation step
 
-   To avoid typing aways type sudo when using Docker we need to add it on the users group.
+   To avoid repetitivelly typing sudo when using Docker we need to add it on the users group.
 
       $`sudo groupadd docker`
 
